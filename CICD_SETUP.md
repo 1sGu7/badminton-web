@@ -1,3 +1,28 @@
+## 🔄 Hướng dẫn khởi động lại website khi máy chủ tắt hoặc khởi động lại
+
+Khi EC2/VPS/server bị tắt hoặc reboot, bạn cần khởi động lại website thủ công như sau:
+
+1. Đăng nhập SSH vào server, cd vào thư mục dự án.
+2. Nếu container cũ còn, xóa trước:
+   ```bash
+   docker rm -f badminton-web
+   ```
+3. Chạy lại container:
+   ```bash
+   docker run -d --name badminton-web -p 80:80 -p 5000:5000 --env-file .env badminton-web:latest
+   ```
+4. Nếu cần build lại image:
+   ```bash
+   docker build -t badminton-web:latest .
+   docker run -d --name badminton-web -p 80:80 -p 5000:5000 --env-file .env badminton-web:latest
+   ```
+5. Kiểm tra log:
+   ```bash
+   docker logs badminton-web
+   ```
+6. Truy cập lại web qua IP hoặc domain.
+
+**Nên dùng các tool như systemd, pm2, hoặc Docker restart policy để tự động khởi động lại container khi máy chủ khởi động lại (xem mục nâng cao bên dưới).**
 
 ---
 title: CI/CD Setup Guide with Jenkins (AWS EC2 Free Tier)

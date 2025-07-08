@@ -89,7 +89,8 @@ badminton-web/
 └── README.md
 ```
 
-## 🚀 Hướng dẫn cài đặt
+
+## 🚀 Hướng dẫn cài đặt & chạy trên máy cá nhân/IDE (Local Development)
 
 ### Yêu cầu hệ thống
 - Node.js (v16 trở lên)
@@ -248,6 +249,29 @@ npm run dev-full
 - ✅ Image lazy loading
 - ✅ Infinite scroll (có thể thêm)
 - ✅ Dark mode (có thể thêm)
+
+
+
+## 🔄 Lưu ý: Hướng dẫn khởi động lại website khi deploy production (xem chi tiết trong file CICD_SETUP.md)
+
+Nếu bạn deploy trên server (EC2, VPS, máy chủ thật), khi máy chủ bị tắt hoặc khởi động lại, hãy xem hướng dẫn chi tiết khởi động lại website trong file `CICD_SETUP.md`.
+
+Tóm tắt:
+1. Đăng nhập SSH vào server, cd vào thư mục dự án.
+2. Nếu container cũ còn, xóa trước: `docker rm -f badminton-web`
+3. Chạy lại container:
+   ```bash
+   docker run -d --name badminton-web -p 80:80 -p 5000:5000 --env-file .env badminton-web:latest
+   ```
+4. Nếu cần build lại image:
+   ```bash
+   docker build -t badminton-web:latest .
+   docker run -d --name badminton-web -p 80:80 -p 5000:5000 --env-file .env badminton-web:latest
+   ```
+5. Xem log: `docker logs badminton-web`
+6. Truy cập lại web qua IP hoặc domain.
+
+**Xem hướng dẫn chi tiết, các lưu ý bảo mật, backup, log... trong file CICD_SETUP.md**
 
 ## 🚀 Deployment
 
