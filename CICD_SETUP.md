@@ -24,9 +24,13 @@ Khi EC2/VPS/server bị tắt hoặc reboot, bạn cần khởi động lại we
 
 **Nên dùng các tool như systemd, pm2, hoặc Docker restart policy để tự động khởi động lại container khi máy chủ khởi động lại (xem mục nâng cao bên dưới).**
 
----
-title: CI/CD Setup Guide with Jenkins (AWS EC2 Free Tier)
----
+
+<h1 align="center">🚀 CI/CD Setup Guide with Jenkins (AWS EC2 Free Tier)</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/CI%2FCD-Jenkins-orange" alt="Jenkins"/>
+  <img src="https://img.shields.io/badge/Cloud-AWS-yellow" alt="AWS"/>
+  <img src="https://img.shields.io/badge/Docker-blue" alt="Docker"/>
+</p>
 
 ## Yêu cầu hệ thống
 

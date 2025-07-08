@@ -1,4 +1,13 @@
-# Badminton Shop - Hệ thống thương mại điện tử bán linh kiện cầu lông
+
+<h1 align="center">🏸 Badminton Shop - Hệ thống thương mại điện tử bán linh kiện cầu lông</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/Stack-MERN-blue" alt="MERN Stack"/>
+  <img src="https://img.shields.io/badge/Frontend-Next.js-blueviolet" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/Backend-Express-green" alt="Express"/>
+  <img src="https://img.shields.io/badge/CI%2FCD-Jenkins-orange" alt="Jenkins"/>
+  <img src="https://img.shields.io/badge/Cloud-AWS-yellow" alt="AWS"/>
+</p>
+
 
 ## 📋 Mô tả dự án
 
